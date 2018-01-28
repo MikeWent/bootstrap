@@ -8,22 +8,28 @@ debian="python3 python3-dev python3-pip \
 openssh-client openssh-server"
 arch="python python-pip openssh"
 
+source colors.sh
 if [ -f /etc/debian_version ] ; then
-    echo "Ubuntu/Debian detected"
+    printf "${INFO} ${ORANGE}Ubuntu/Debian${NC} detected\n"
     sleep 1
-    echo "Running full upgrade..."
+    printf "${INFO} Running full upgrade...\n"
     sudo apt update && sudo apt upgrade
-    echo "Installing software..."
+    printf "${INFO} Installing software...\n"
     sudo apt install $packages $debian
-    echo "Your Ubuntu/Debian is ready!"
+    printf "${SUCCESS} Your Ubuntu/Debian is ready!\n"
+    exit 0
 fi
 
 if [ -f /etc/arch-release ] ; then
-    echo "Arch Linux detected"
+    printf "${INFO} ${CYAN}Arch Linux${NC} detected\n"
     sleep 1
-    echo "Running full upgrade..."
+    printf "${INFO} Running full upgrade...\n"
     sudo pacman -Syu
-    echo "Installing software..."
+    printf "${INFO} Installing software...\n"
     sudo pacman -S $packages $arch
-    echo "Your Arch Linux is ready!"
+    printf "${SUCCESS} Your Arch Linux is ready!\n"
+    exit 0
 fi
+
+printf "${ERROR} I can't detect your OS, sorry\n"
+exit 1
