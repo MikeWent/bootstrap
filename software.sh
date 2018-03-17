@@ -15,9 +15,7 @@ if [ -f /etc/debian_version ] ; then
     printf "${INFO} Running full upgrade...\n"
     apt update && sudo apt upgrade
     printf "${INFO} Installing software...\n"
-    apt install $packages $debian
-    printf "${SUCCESS} Your Ubuntu/Debian is ready!\n"
-    exit 0
+    apt install $packages $debian && printf "${SUCCESS} Your Ubuntu/Debian is ready!\n" && exit 0
 fi
 
 if [ -f /etc/arch-release ] ; then
@@ -26,9 +24,7 @@ if [ -f /etc/arch-release ] ; then
     printf "${INFO} Running full upgrade...\n"
     pacman -Syu
     printf "${INFO} Installing software...\n"
-    pacman -S $packages $arch
-    printf "${SUCCESS} Your Arch Linux is ready!\n"
-    exit 0
+    pacman -S $packages $arch && printf "${SUCCESS} Your Arch Linux is ready!\n" && exit 0
 fi
 
 printf "${ERROR} I can't detect your OS, sorry\n"
