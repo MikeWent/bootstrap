@@ -9,6 +9,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
     printf "${INFO} Run this script? [press any key] "
     read -n 1
     bash ./robbyrussell-install.sh
+    rm ./robbyrussell-install.sh
 else
     printf "${ERROR} oh-my-zsh is already installed\n"
 fi

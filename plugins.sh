@@ -8,3 +8,4 @@ printf "Add this to your plugins list: ${CYAN}zsh-autosuggestions zsh-syntax-hig
 printf "${CONFIRM} Ready? [press any key] "
 read -n 1
 nano ~/.zshrc
+source ~/.zshrc
