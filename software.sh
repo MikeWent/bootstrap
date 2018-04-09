@@ -27,5 +27,5 @@ if [ -f /etc/arch-release ] ; then
     pacman -S $packages $arch && printf "${SUCCESS} Your Arch Linux is ready!\n" && exit 0
 fi
 
-printf "${ERROR} I can't detect your OS, sorry\n"
+printf "${ERROR} Some error occured\n"
 exit 1
