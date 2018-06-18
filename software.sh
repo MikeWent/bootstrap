@@ -2,11 +2,10 @@
 
 # Packages
 packages="mc wget curl bash zsh zip unzip \
-gnupg nano sudo gnome-screenshot git xclip nload \
-htop encfs sshfs"
+gnupg nano sudo git nload htop"
 debian="python3 python3-dev python3-pip \
 openssh-client openssh-server"
-arch="python python-pip openssh"
+arch="python openssh"
 
 source colors.sh
 if [ -f /etc/debian_version ] ; then
